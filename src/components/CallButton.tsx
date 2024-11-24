@@ -55,7 +55,7 @@ const CallButton: FC<CallButtonProps> = ({
       if (emailId === chatUser.email) {
         return;
       }
-      console.log( chatUser.email,callingTo)
+      
       if(chatUser.email === callingTo ){
         showToast("incomingCall", {
           name,

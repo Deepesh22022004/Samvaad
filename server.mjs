@@ -7,7 +7,7 @@ const dev = process.env.NODE_ENV !== 'production'; // Use `production` to check 
 const hostname = "localhost"
 const port = 3000;
 
-const app = next({ dev, hostname, port });
+const app = next({hostname, port });
 const handler = app.getRequestHandler();
 
 export const startServer = async () => {
