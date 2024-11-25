@@ -77,7 +77,7 @@ export async function POST(req: Request) {
     });
 
     // If chat partner is the AI bot, generate AI response
-    if (friendId === "14a70c54-9bab-4895-8f3b-6daa8f449907") {
+    if (friendId === "bd8eea61-96b7-4a13-b0c7-e42559c2bc88") {
       const textObj = { text };
       const aiResponse = await generateAiResponse(textObj.text);
       if (aiResponse) {
