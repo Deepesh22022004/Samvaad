@@ -14,6 +14,7 @@
     "@hookform/resolvers": "^3.9.0",
     "@next-auth/upstash-redis-adapter": "^3.0.4",
     "@tailwindcss/forms": "^0.5.9",
+    "@types/jest": "^29.5.14",
     "@upstash/redis": "^1.34.3",
     "aws-amplify": "^6.9.0",
     "axios": "^1.7.7",
@@ -44,7 +45,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.17.7",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/simple-peer": "^9.11.8",
