@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
+import path from 'path';
 
 const nextConfig = {
   images: {
@@ -22,9 +22,11 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
+    // Use import.meta.url to resolve __dirname in ES modules
+    const currentDir = path.dirname(new URL(import.meta.url).pathname);
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(currentDir, 'src'),
     };
     return config;
   },
