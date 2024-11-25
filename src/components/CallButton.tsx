@@ -20,6 +20,7 @@ const CallButton: FC<CallButtonProps> = ({
   chatUser,
   roomId
 }) => {
+  
     const socket = useSocket();
     const router = useRouter();
     const { showToast } = useToast();
