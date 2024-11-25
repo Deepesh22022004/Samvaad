@@ -19,7 +19,7 @@ export const startServer = async () => {
 
     const io = new SocketIOServer(httpServer, {
         cors: {
-            origin: "http://localhost:3000",
+            origin: process.env.CLIENT_URL || "https://samvaad-klrt.onrender.com",
  
             methods: ['GET', 'POST'],
             credentials: true
