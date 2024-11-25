@@ -4,15 +4,13 @@ frontend:
     preBuild:
       commands:
         - npm install
-        - npm install --save-dev typescript @types/react
     build:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: 
-    
+    baseDirectory: .next # For Next.js projects. Use "out" for static exports.
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - node_modules/**/* # Caches dependencies to speed up future builds
