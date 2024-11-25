@@ -4,8 +4,9 @@ import next from 'next';
 import { Server as SocketIOServer } from 'socket.io';
 
 const dev = process.env.NODE_ENV !== 'production'; // Use `production` to check if it's production
-const hostname = "localhost"
-const port = 3000;
+const hostname = process.env.HOSTNAME || "localhost";
+const port = process.env.PORT || 3000;
+
 
 const app = next({ dev, hostname, port });
 const handler = app.getRequestHandler();
@@ -18,9 +19,9 @@ export const startServer = async () => {
 
     const io = new SocketIOServer(httpServer, {
         cors: {
-            origin: 'http://localhost:3000', // Ensure this matches your client URL
+            origin: process.env.CLIENT_ORIGIN || "http://localhost:3000", 
             methods: ['GET', 'POST'],
-        },
+        }
     });
 
     const emailToSocketId = new Map();

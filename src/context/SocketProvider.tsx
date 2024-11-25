@@ -8,7 +8,7 @@ type SocketType = Socket<DefaultEventsMap, DefaultEventsMap> | null;
 
 const SocketContext = createContext<SocketType>(null);
 
-const socket = io("http://localhost:3000");
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_SERVER || "http://localhost:3000");
 
 export const useSocket = () => {
   const context = useContext(SocketContext);
