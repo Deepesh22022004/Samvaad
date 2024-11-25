@@ -38,16 +38,16 @@ const CallButton: FC<CallButtonProps> = ({
       router.push(`/dashboard/call/${roomId}`);
     },[])
 
-    const handleAcceptCall = () => {
+    const handleAcceptCall =useCallback(() => {
       handleCallButton();
-  };
+    },[])
   
-  const handleRejectCall = () => {
+    const handleRejectCall = useCallback(() => {
     const emailTo = chatPartner.email;
     socket.emit("call:reject", { to: emailTo, reason: "Call was rejected by the callee" });
     toast.dismiss();
     router.push(`/dashboard/chat/${roomId}`);
-};
+  },[])
 
 
     const handleIncomingToast = useCallback((data: any) => {
