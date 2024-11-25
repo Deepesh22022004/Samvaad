@@ -19,7 +19,7 @@ export const startServer = async () => {
 
     const io = new SocketIOServer(httpServer, {
         cors: {
-            origin: process.env.CLIENT_ORIGIN || "https://deeps-samvaad.vercel.app",
+            origin: "http://localhost:3000",
  
             methods: ['GET', 'POST'],
             credentials: true
