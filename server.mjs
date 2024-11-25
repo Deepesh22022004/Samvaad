@@ -4,7 +4,7 @@ import next from 'next';
 import { Server as SocketIOServer } from 'socket.io';
 
 const dev = process.env.NODE_ENV !== 'production'; // Use `production` to check if it's production
-const hostname = process.env.HOSTNAME || "localhost";
+const hostname = "localhost";
 const port = process.env.PORT || 3000;
 
 
