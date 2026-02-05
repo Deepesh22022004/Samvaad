@@ -8,7 +8,7 @@ type SocketType = Socket<DefaultEventsMap, DefaultEventsMap> | null;
 
 const SocketContext = createContext<SocketType>(null);
 
-const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || "https://samvaad-klrt.onrender.com");
+const socket = io(process.env.NEXT_PUBLIC_APP_URL!);
 
 
 export const useSocket = () => {

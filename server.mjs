@@ -19,7 +19,7 @@ export const startServer = async () => {
 
     const io = new SocketIOServer(httpServer, {
         cors: {
-            origin: process.env.NEXTAUTH_URL || "https://samvaad-klrt.onrender.com",
+            origin: process.env.NEXT_PUBLIC_APP_URL,
  
             methods: ['GET', 'POST'],
             credentials: true

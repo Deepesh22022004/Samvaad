@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon server.mjs",
     "build": "next build",
-    "start": "NODE_ENV=production node server.mjs",
+    "start": "cross-env NODE_ENV=production node server.mjs",
     "lint": "next lint"
   },
   "dependencies": {
@@ -55,5 +55,8 @@
     "webrtc": "^1.14.1",
     "webrtc-adapter": "^9.0.1",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
   }
 }
