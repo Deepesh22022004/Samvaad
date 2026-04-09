@@ -1,0 +1,18 @@
+name: Upstash Keep Alive
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # every Sunday
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Upstash Redis
+        run: |
+          curl -X GET "$UPSTASH_REDIS_REST_URL/ping" \
+          -H "Authorization: Bearer $UPSTASH_REDIS_REST_TOKEN"
+        env:
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
